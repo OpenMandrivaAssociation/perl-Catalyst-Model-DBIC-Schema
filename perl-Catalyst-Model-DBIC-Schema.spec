@@ -2,10 +2,10 @@
 %define name	perl-%{module}
 %define	modprefix Catalyst
 
-%define version 0.18
+%define version 0.20
 
 %define	rel	1
-%define release %mkrel %{rel}
+%define release %mkrel 1
 
 Summary:	DBIx::Class::Schema Model Class 
 Name:		%{name}
