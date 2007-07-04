@@ -1,16 +1,13 @@
 %define	module	Catalyst-Model-DBIC-Schema
 %define name	perl-%{module}
 %define	modprefix Catalyst
-
 %define version 0.20
-
-%define	rel	1
 %define release %mkrel 1
 
-Summary:	DBIx::Class::Schema Model Class 
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
+Summary:	DBIx::Class::Schema Model Class 
 License:	Artistic/GPL
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}/
@@ -19,10 +16,10 @@ Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{module}-%{
 BuildRequires:	perl-devel >= 5.8.1
 %endif
 BuildRequires:	perl(Catalyst) >= 5.0
-BuildRequires:	perl-DBIx-Class
-BuildRequires:	perl-DBIx-Class-Loader
+BuildRequires:	perl(DBIx::Class)
+BuildRequires:	perl(DBIx::Class::Schema::Loader)
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-root
+Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This is a Catalyst Model for DBIx::Class::Schema-based Models. See the
