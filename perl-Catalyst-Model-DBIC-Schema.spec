@@ -19,7 +19,6 @@ BuildRequires:	perl(Catalyst) >= 5.0
 BuildRequires:	perl(DBIx::Class)
 BuildRequires:	perl(DBIx::Class::Schema::Loader)
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This is a Catalyst Model for DBIx::Class::Schema-based Models. See the
