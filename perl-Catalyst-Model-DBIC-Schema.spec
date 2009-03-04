@@ -1,7 +1,7 @@
 %define	module	Catalyst-Model-DBIC-Schema
 %define name	perl-%{module}
 %define	modprefix Catalyst
-%define version 0.21
+%define version 0.22
 %define release %mkrel 1
 
 Name:		%{name}
