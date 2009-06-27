@@ -1,23 +1,20 @@
-%define	module	Catalyst-Model-DBIC-Schema
-%define name	perl-%{module}
-%define	modprefix Catalyst
-%define version 0.23
-%define release %mkrel 1
+%define upstream_name  	    Catalyst-Model-DBIC-Schema
+%define upstream_version    0.25
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 Summary:	DBIx::Class::Schema Model Class 
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}/
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{module}-%{version}.tar.gz
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel >= 5.8.1
-%endif
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source:     http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
 BuildRequires:	perl(Catalyst) >= 5.0
 BuildRequires:	perl(DBIx::Class)
 BuildRequires:	perl(DBIx::Class::Schema::Loader)
+BuildRequires:	perl(DBIx::Class::Cursor::Cached)
+BuildRequires:	perl(Catalyst::Devel)
+BuildRequires:	perl(CatalystX::Component::Traits)
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}
 
@@ -27,10 +24,10 @@ documentation for Catalyst::Helper::Model::DBIC::Schema for information on
 generating these Models via Helper scripts.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version} 
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
+%__perl Makefile.PL INSTALLDIRS=vendor --skipdeps
 %make
 
 %check
@@ -40,13 +37,13 @@ generating these Models via Helper scripts.
 rm -rf %{buildroot}
 %makeinstall_std
 
+%clean
+rm -rf %{buildroot}
+
 %files
 %defattr(-,root,root)
 %doc README Changes
-%{perl_vendorlib}/%{modprefix}
+%{perl_vendorlib}/Catalyst
 %{_mandir}/*/*
-
-%clean
-rm -rf %{buildroot}
 
 
