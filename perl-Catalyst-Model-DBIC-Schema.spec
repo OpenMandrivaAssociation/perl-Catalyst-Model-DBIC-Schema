@@ -15,6 +15,9 @@ BuildRequires:	perl(DBIx::Class::Schema::Loader)
 BuildRequires:	perl(DBIx::Class::Cursor::Cached)
 BuildRequires:	perl(Catalyst::Devel)
 BuildRequires:	perl(CatalystX::Component::Traits)
+BuildRequires:	perl(Test::Exception)
+BuildRequires:	perl(namespace::autoclean)
+BuildRequires:	perl(Tie::IxHash)
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}
 
