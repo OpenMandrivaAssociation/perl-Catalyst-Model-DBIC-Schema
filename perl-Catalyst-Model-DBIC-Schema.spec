@@ -1,9 +1,10 @@
 %define upstream_name  	    Catalyst-Model-DBIC-Schema
 %define upstream_version    0.25
+%define _requires_exceptions perl(Catalyst::Model::DBIC::Schema::Types)
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 Summary:	DBIx::Class::Schema Model Class 
 License:	Artistic/GPL
 Group:		Development/Perl
