@@ -1,15 +1,18 @@
-%define upstream_name  	    Catalyst-Model-DBIC-Schema
-%define upstream_version    0.25
+%define upstream_name  	 Catalyst-Model-DBIC-Schema
+%define upstream_version 0.26
+
 %define _requires_exceptions perl(Catalyst::Model::DBIC::Schema::Types)
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
+
 Summary:	DBIx::Class::Schema Model Class 
 License:	Artistic/GPL
 Group:		Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
-Source:     http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:    http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	perl(Catalyst) >= 5.0
 BuildRequires:	perl(DBIx::Class)
 BuildRequires:	perl(DBIx::Class::Schema::Loader)
@@ -20,7 +23,7 @@ BuildRequires:	perl(Test::Exception)
 BuildRequires:	perl(namespace::autoclean)
 BuildRequires:	perl(Tie::IxHash)
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This is a Catalyst Model for DBIx::Class::Schema-based Models. See the
@@ -49,5 +52,3 @@ rm -rf %{buildroot}
 %doc README Changes
 %{perl_vendorlib}/Catalyst
 %{_mandir}/*/*
-
-
