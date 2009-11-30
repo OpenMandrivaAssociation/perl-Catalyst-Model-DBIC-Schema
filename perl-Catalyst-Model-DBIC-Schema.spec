@@ -5,7 +5,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
 Summary:	DBIx::Class::Schema Model Class 
 License:	Artistic/GPL
@@ -22,8 +22,11 @@ BuildRequires:	perl(CatalystX::Component::Traits)
 BuildRequires:	perl(Test::Exception)
 BuildRequires:	perl(namespace::autoclean)
 BuildRequires:	perl(Tie::IxHash)
+
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
+
+Requires:	perl(CatalystX::Component::Traits)
 
 %description
 This is a Catalyst Model for DBIx::Class::Schema-based Models. See the
@@ -38,7 +41,7 @@ generating these Models via Helper scripts.
 %make
 
 %check
-%__make test
+%make test
 
 %install
 rm -rf %{buildroot}
