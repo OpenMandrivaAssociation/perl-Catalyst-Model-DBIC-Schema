@@ -1,5 +1,5 @@
 %define upstream_name  	 Catalyst-Model-DBIC-Schema
-%define upstream_version 0.38
+%define upstream_version 0.39
 
 %define _requires_exceptions perl(Catalyst::Model::DBIC::Schema::Types)
 
