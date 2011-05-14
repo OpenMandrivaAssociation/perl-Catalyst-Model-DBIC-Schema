@@ -12,21 +12,21 @@ License:	Artistic/GPL
 Group:		Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
-
 BuildRequires:	perl(Catalyst) >= 5.0
+BuildRequires:	perl(Catalyst::Devel)
+BuildRequires:	perl(CatalystX::Component::Traits)
+BuildRequires:	perl(Class::C3)
 BuildRequires:	perl(DBIx::Class)
 BuildRequires:	perl(DBIx::Class::Schema::Loader)
 BuildRequires:	perl(DBIx::Class::Cursor::Cached)
-BuildRequires:	perl(Catalyst::Devel)
-BuildRequires:	perl(CatalystX::Component::Traits)
-BuildRequires:	perl(Test::Exception)
+BuildRequires:	perl(Module::Find)
 BuildRequires:	perl(namespace::autoclean)
+BuildRequires:	perl(Test::Exception)
 BuildRequires:	perl(Tie::IxHash)
-
+Requires:	perl(CatalystX::Component::Traits)
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
-Requires:	perl(CatalystX::Component::Traits)
 
 %description
 This is a Catalyst Model for DBIx::Class::Schema-based Models. See the
