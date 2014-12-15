@@ -1,2 +1,4 @@
+removed_sources:
+  Catalyst-Model-DBIC-Schema-0.50.tar.gz: fdf130178eb96819c9c8e270a7cd45152761f291
 sources:
-  "Catalyst-Model-DBIC-Schema-0.50.tar.gz": fdf130178eb96819c9c8e270a7cd45152761f291
+  Catalyst-Model-DBIC-Schema-0.62.tar.gz: be95d4e7af4c49055f645c47230ce3dc4f67d00b
