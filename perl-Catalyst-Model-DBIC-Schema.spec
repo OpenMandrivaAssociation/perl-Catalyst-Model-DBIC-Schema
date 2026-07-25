@@ -1,5 +1,5 @@
 %define upstream_name  	 Catalyst-Model-DBIC-Schema
-%define upstream_version 0.50
+%define upstream_version 0.66
 
 %if %{_use_internal_dependency_generator}
 %define __noautoreq 'perl\\(Catalyst::Model::DBIC::Schema::Types\\)'
@@ -8,14 +8,14 @@
 %endif
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	DBIx::Class::Schema Model Class 
 License:	Artistic/GPL
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/perl-catalyst/Catalyst-Model-DBIC-Schema
+Source0:	https://cpan.metacpan.org/authors/id/H/HA/HAARG/Catalyst-Model-DBIC-Schema-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
